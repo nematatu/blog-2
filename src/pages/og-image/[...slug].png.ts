@@ -1,7 +1,7 @@
 import { Resvg } from "@resvg/resvg-js";
 import type { APIContext, InferGetStaticPropsType } from "astro";
 import { getCollection } from "astro:content";
-import satori from "satori";
+import satori, { type SatoriOptions } from "satori";
 import { createHash } from "node:crypto";
 import {
   existsSync,
@@ -67,11 +67,11 @@ function loadFonts() {
       (file) =>
         file.includes("japanese") &&
         file.includes("-400-") &&
-        file.endsWith(".woff2"),
+        file.endsWith(".woff"),
     ) ??
     loadFontFromDir(
       notoDir,
-      (file) => file.includes("-400-") && file.endsWith(".woff2"),
+      (file) => file.includes("-400-") && file.endsWith(".woff"),
     );
 
   const notoBold =
@@ -80,11 +80,11 @@ function loadFonts() {
       (file) =>
         file.includes("japanese") &&
         file.includes("-700-") &&
-        file.endsWith(".woff2"),
+        file.endsWith(".woff"),
     ) ??
     loadFontFromDir(
       notoDir,
-      (file) => file.includes("-700-") && file.endsWith(".woff2"),
+      (file) => file.includes("-700-") && file.endsWith(".woff"),
     );
 
   const geistRegular =
@@ -93,11 +93,11 @@ function loadFonts() {
       (file) =>
         file.includes("latin") &&
         file.includes("-400-") &&
-        file.endsWith(".woff2"),
+        file.endsWith(".woff"),
     ) ??
     loadFontFromDir(
       geistSansDir,
-      (file) => file.includes("-400-") && file.endsWith(".woff2"),
+      (file) => file.includes("-400-") && file.endsWith(".woff"),
     );
 
   const geistBold =
@@ -106,11 +106,11 @@ function loadFonts() {
       (file) =>
         file.includes("latin") &&
         file.includes("-700-") &&
-        file.endsWith(".woff2"),
+        file.endsWith(".woff"),
     ) ??
     loadFontFromDir(
       geistSansDir,
-      (file) => file.includes("-700-") && file.endsWith(".woff2"),
+      (file) => file.includes("-700-") && file.endsWith(".woff"),
     );
 
   const monoRegular =
@@ -119,11 +119,11 @@ function loadFonts() {
       (file) =>
         file.includes("latin") &&
         file.includes("-400-") &&
-        file.endsWith(".woff2"),
+        file.endsWith(".woff"),
     ) ??
     loadFontFromDir(
       geistMonoDir,
-      (file) => file.includes("-400-") && file.endsWith(".woff2"),
+      (file) => file.includes("-400-") && file.endsWith(".woff"),
     );
 
   const monoBold =
@@ -132,11 +132,11 @@ function loadFonts() {
       (file) =>
         file.includes("latin") &&
         file.includes("-700-") &&
-        file.endsWith(".woff2"),
+        file.endsWith(".woff"),
     ) ??
     loadFontFromDir(
       geistMonoDir,
-      (file) => file.includes("-700-") && file.endsWith(".woff2"),
+      (file) => file.includes("-700-") && file.endsWith(".woff"),
     );
 
   const sansName = notoRegular ? "Noto Sans JP" : "Geist Sans";
@@ -166,22 +166,22 @@ const ogOptions = {
     {
       data: fonts.sansRegular,
       name: fonts.sansName,
-      style: "normal",
-      weight: 400,
+      style: "normal" as const,
+      weight: 400 as const,
     },
     {
       data: fonts.sansBold,
       name: fonts.sansName,
-      style: "normal",
-      weight: 700,
+      style: "normal" as const,
+      weight: 700 as const,
     },
     ...(fonts.monoRegular
       ? [
           {
             data: fonts.monoRegular,
             name: fonts.monoName,
-            style: "normal",
-            weight: 400,
+            style: "normal" as const,
+            weight: 400 as const,
           },
         ]
       : []),
@@ -190,13 +190,13 @@ const ogOptions = {
           {
             data: fonts.monoBold,
             name: fonts.monoName,
-            style: "normal",
-            weight: 700,
+            style: "normal" as const,
+            weight: 700 as const,
           },
         ]
       : []),
   ],
-};
+} satisfies SatoriOptions;
 
 const h = (
   type: string,
@@ -416,7 +416,7 @@ export async function getStaticPaths() {
 
       return [
         {
-          params: { slug: [prefix, entry.id] },
+          params: { slug: `${prefix}/${entry.id}` },
           props: {
             title: entry.data.title,
             description: entry.data.description,

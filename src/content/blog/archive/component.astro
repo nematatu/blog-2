@@ -1,0 +1,16 @@
+---
+const label = "Show alert";
+---
+
+<button class="relative-component" data-relative-component type="button">
+  {label}
+</button>
+
+<script>
+  const buttons = document.querySelectorAll("[data-relative-component]");
+  for (const button of buttons) {
+    button.addEventListener("click", () => {
+      alert("Hello from a relative component!");
+    });
+  }
+</script>
