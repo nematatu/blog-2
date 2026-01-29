@@ -208,7 +208,8 @@ const { title, description, image = "/astro-micro.jpg" } = Astro.props;
     if (userTheme === "light" || userTheme === "dark") {
       toggleTheme(userTheme === "dark");
     } else {
-      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+      localStorage.setItem("theme", "dark");
+      toggleTheme(true);
     }
   }
 

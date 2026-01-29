@@ -4,6 +4,7 @@ description: "Pagination works regardless of folder name."
 date: "2024-03-21"
 tags:
   - example
+draft: true
 ---
 
 This post should show up in proper chronological order even though its folder comes last in the `content/blog` directory.

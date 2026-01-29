@@ -9,8 +9,9 @@ import Link from "@components/Link.astro";
 import TableOfContents from "@components/TableOfContents.astro";
 
 export async function getStaticPaths() {
+  const showDrafts = import.meta.env.DEV;
   const projects = (await getCollection("projects"))
-    .filter((post) => !post.data.draft)
+    .filter((post) => showDrafts || !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   return projects.map((project) => ({
     params: { id: project.id },
