@@ -105,16 +105,10 @@ export const SOCIALS: Socials = [
 
 ## Deploy the site
 
-To set up RSS and Giscus, it's easier if the site is deployed and has a URL for you to use. Instantly deploy to Vercel or Netlify by clicking the buttons below.
+To set up RSS and Giscus, it's easier if the site is deployed and has a URL for you to use.
 
-<div class="flex gap-2">
-  <a target="_blank" aria-label="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/trevortylerlee/astro-micro">
-    <img src="/deploy_vercel.svg" />
-  </a>
-  <a target="_blank" aria-label="Deploy with Netlify" href="https://app.netlify.com/start/deploy?repository=https://github.com/trevortylerlee/astro-micro">
-    <img src="/deploy_netlify.svg" />
-  </a>
-</div>
+- [Deploy with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/trevortylerlee/astro-micro)
+- [Deploy with Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/trevortylerlee/astro-micro)
 
 To deploy manually see [Astro's docs](https://docs.astro.build/en/guides/deploy/).
 
