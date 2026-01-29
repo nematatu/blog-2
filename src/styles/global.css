@@ -147,3 +147,76 @@ pre {
 .copy-code:active {
   @apply scale-90 transition-transform;
 }
+
+@layer components {
+  .image-caption {
+    @apply my-6 flex flex-col items-center gap-2;
+  }
+
+  .image-caption img {
+    @apply rounded;
+  }
+
+  .image-caption figcaption {
+    @apply text-sm text-black/60 dark:text-white/60;
+  }
+
+  .twitter-card {
+    @apply my-6 flex justify-center;
+  }
+
+  .twitter-card blockquote {
+    @apply w-full rounded border border-black/15 bg-white/70 px-4 py-3 text-sm text-black/80 shadow-sm;
+    @apply dark:border-white/20 dark:bg-neutral-900/70 dark:text-white/80;
+  }
+
+  .twitter-card blockquote a {
+    @apply break-all text-black/80 underline decoration-black/30;
+    @apply dark:text-white/80 dark:decoration-white/30;
+  }
+
+  .github-card {
+    @apply my-6 grid gap-2 rounded border border-black/15 bg-white/70 p-4 text-sm text-black/80 shadow-sm;
+    @apply dark:border-white/20 dark:bg-neutral-900/70 dark:text-white/80;
+  }
+
+  .github-card .gh-title {
+    @apply flex items-center gap-2 text-sm font-semibold;
+  }
+
+  .github-card .gh-avatar {
+    @apply size-6 rounded-full bg-black/10 dark:bg-white/10;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .github-card .gh-icon {
+    @apply ml-auto size-4 rounded border border-black/20 opacity-60;
+    @apply dark:border-white/20;
+  }
+
+  .github-card .gh-description {
+    @apply text-sm text-black/70 dark:text-white/70;
+  }
+
+  .github-card .gh-chips {
+    @apply flex flex-wrap gap-2 text-xs;
+  }
+
+  .github-card .gh-chips span {
+    @apply rounded border border-black/10 px-2 py-0.5;
+    @apply dark:border-white/10;
+  }
+
+  .github-card.gh-simple .gh-title {
+    @apply mb-1;
+  }
+
+  .github-card.gh-loading {
+    @apply opacity-80;
+  }
+
+  .github-card.gh-error {
+    @apply border-red-500/40 text-red-700 dark:text-red-300;
+  }
+}

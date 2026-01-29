@@ -20,9 +20,11 @@
     "astro": "^5.13.9",
     "astro-pagefind": "^1.8.5",
     "clsx": "^2.1.1",
+    "remark-directive": "^3.0.1",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.13",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.18",
