@@ -3,9 +3,7 @@ title: "山口へインハイ旅行"
 description: "インハイ2026行ってきた"
 date: "2026-01-19"
 tags: ["バドミントン",  "写真"]
-ogImage:
-  src: "https://assets.blog.amatatu.com/posts/ryokou-ih-2025-yamaguchi/7DE58784-3C62-4897-931E-836A093D6E94_1_105_c.jpeg"
-  alt: "博多wallpaper"
+ogImage: "https://assets.blog.amatatu.com/posts/ryokou-ih-2025-yamaguchi/7DE58784-3C62-4897-931E-836A093D6E94_1_105_c.jpeg"
 pinned: true
 ---
 

@@ -4,9 +4,7 @@ description: "京都の写真"
 date: "2026-01-19"
 draft: false
 tags: ["写真"]
-ogImage: 
-  src: "https://assets.blog.amatatu.com/posts/kyoto-photo/20250725021454.jpg"
-  alt: "京都"
+ogImage: "https://assets.blog.amatatu.com/posts/kyoto-photo/20250725021454.jpg"
 ---
 
 ハッカソン帰りに撮ったやつ
