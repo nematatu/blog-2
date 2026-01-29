@@ -10,16 +10,19 @@ import rehypeImageCaption from "./src/lib/markdown/rehype-image-caption.js";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-micro.vercel.app",
-  integrations: [sitemap(), mdx(), pagefind()],
-  vite: {
-    plugins: [tailwindcss()],
-  },
-  markdown: {
-    shikiConfig: {
-      theme: "css-variables",
+	site: "https://blog.amatatu.com",
+	integrations: [sitemap(), mdx(), pagefind()],
+  image: {
+        domains: ["https://assets.blog.amatatu.com"]
     },
-    remarkPlugins: [remarkDirective, remarkTwitterCard, remarkGithubCard],
-    rehypePlugins: [rehypeImageCaption],
-  },
+	vite: {
+		plugins: [tailwindcss()],
+	},
+	markdown: {
+		shikiConfig: {
+			theme: "css-variables",
+		},
+		remarkPlugins: [remarkDirective, remarkTwitterCard, remarkGithubCard],
+		rehypePlugins: [rehypeImageCaption],
+	},
 });
