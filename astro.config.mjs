@@ -13,6 +13,9 @@ export default defineConfig({
 	integrations: [sitemap(), mdx(), pagefind()],
 	image: {
 		domains: ["assets.blog.amatatu.com"],
+		service: {
+			entrypoint: "astro/assets/services/noop",
+		},
 	},
 	vite: {
 		plugins: [tailwindcss()],

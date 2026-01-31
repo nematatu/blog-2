@@ -6,49 +6,75 @@
   },
   "collections": [
     {
-      "name": "posts",
+      "name": "blog",
       "label": "ブログ記事",
-      "path": "content/posts",
+      "path": "src/content/blog",
       "extension": "md",
       "fields": [
         { "type": "text", "name": "title", "label": "タイトル", "required": true },
-        { "type": "richtext", "name": "content", "label": "本文", "required": true },
-        { "type": "date", "name": "publishedAt", "label": "公開日" },
+        { "type": "textarea", "name": "description", "label": "説明", "required": true },
+        { "type": "date", "name": "date", "label": "日付", "required": true },
         {
-          "type": "select",
-          "name": "category",
-          "label": "カテゴリ",
+          "type": "checkbox",
+          "name": "tags",
+          "label": "タグ",
           "options": [
-            { "value": "news", "label": "ニュース" },
-            { "value": "blog", "label": "ブログ" },
-            { "value": "tech", "label": "テクノロジー" }
-          ]
+            { "value": "audry", "label": "audry" },
+            { "value": "example", "label": "example" },
+            { "value": "markdown-guide", "label": "markdown-guide" },
+            { "value": "radio", "label": "radio" },
+            { "value": "tutorial", "label": "tutorial" },
+            { "value": "バドミントン", "label": "バドミントン" },
+            { "value": "写真", "label": "写真" },
+            { "value": "日常", "label": "日常" }
+          ],
+          "default": []
         },
-        { "type": "image", "name": "thumbnail", "label": "サムネイル" }
+        { "type": "text", "name": "ogImage", "label": "OG画像URL", "note": "外部URL可" },
+        { "type": "boolean", "name": "draft", "label": "下書き", "default": false },
+        { "type": "richtext", "name": "content", "label": "本文", "required": true }
       ],
       "layout": [
         ["title"],
-        ["publishedAt", "category"],
-        ["thumbnail"],
+        ["description"],
+        ["date", "draft"],
+        ["tags"],
+        ["ogImage"],
         ["content"]
       ],
       "pit": {
         "title": "title",
-        "body": "content"
+        "body": "content",
+        "draft": "draft"
       }
     },
     {
-      "name": "authors",
-      "label": "著者",
-      "path": "content/authors",
-      "extension": "json",
+      "name": "projects",
+      "label": "プロジェクト",
+      "path": "src/content/projects",
+      "extension": "md",
       "fields": [
-        { "type": "text", "name": "name", "label": "名前", "required": true },
-        { "type": "textarea", "name": "profile", "label": "プロフィール" },
-        { "type": "image", "name": "avatar", "label": "アバター" }
+        { "type": "text", "name": "title", "label": "タイトル", "required": true },
+        { "type": "textarea", "name": "description", "label": "説明", "required": true },
+        { "type": "date", "name": "date", "label": "日付", "required": true },
+        { "type": "text", "name": "demoURL", "label": "デモURL" },
+        { "type": "text", "name": "repoURL", "label": "リポジトリURL" },
+        { "type": "text", "name": "ogImage", "label": "OG画像URL", "note": "外部URL可" },
+        { "type": "boolean", "name": "draft", "label": "下書き", "default": false },
+        { "type": "richtext", "name": "content", "label": "本文", "required": true }
+      ],
+      "layout": [
+        ["title"],
+        ["description"],
+        ["date", "draft"],
+        ["demoURL", "repoURL"],
+        ["ogImage"],
+        ["content"]
       ],
       "pit": {
-        "title": "name"
+        "title": "title",
+        "body": "content",
+        "draft": "draft"
       }
     }
   ]
