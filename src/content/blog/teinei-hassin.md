@@ -2,6 +2,7 @@
 title: "丁寧に情報発信したら人の目に留まるかもしれない"
 description: "This post is an example of how to add a cover/hero image"
 date: "2025-10-26"
+draft: true
 tags: ["バドミントン"]
 ---
 

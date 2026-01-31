@@ -2,6 +2,7 @@
 title: "帰省。NAHAマラソンとバドの大会出た"
 description: "NAHAマラソン完走とバドミントン大会の帰省記録"
 date: "2025-12-12"
+draft: true
 tags: ["バドミントン", "日常"]
 ---
 
