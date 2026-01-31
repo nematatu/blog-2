@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "media": {
+    "storagePath": "public/images",
+    "publicPath": "/images"
+  },
+  "collections": [
+    {
+      "name": "posts",
+      "label": "ブログ記事",
+      "path": "content/posts",
+      "extension": "md",
+      "fields": [
+        { "type": "text", "name": "title", "label": "タイトル", "required": true },
+        { "type": "richtext", "name": "content", "label": "本文", "required": true },
+        { "type": "date", "name": "publishedAt", "label": "公開日" },
+        {
+          "type": "select",
+          "name": "category",
+          "label": "カテゴリ",
+          "options": [
+            { "value": "news", "label": "ニュース" },
+            { "value": "blog", "label": "ブログ" },
+            { "value": "tech", "label": "テクノロジー" }
+          ]
+        },
+        { "type": "image", "name": "thumbnail", "label": "サムネイル" }
+      ],
+      "layout": [
+        ["title"],
+        ["publishedAt", "category"],
+        ["thumbnail"],
+        ["content"]
+      ],
+      "pit": {
+        "title": "title",
+        "body": "content"
+      }
+    },
+    {
+      "name": "authors",
+      "label": "著者",
+      "path": "content/authors",
+      "extension": "json",
+      "fields": [
+        { "type": "text", "name": "name", "label": "名前", "required": true },
+        { "type": "textarea", "name": "profile", "label": "プロフィール" },
+        { "type": "image", "name": "avatar", "label": "アバター" }
+      ],
+      "pit": {
+        "title": "name"
+      }
+    }
+  ]
+}
