@@ -31,6 +31,8 @@
           "default": []
         },
         { "type": "text", "name": "ogImage", "label": "OG画像URL", "note": "外部URL可" },
+        { "type": "date", "name": "createdAt", "label": "作成日時", "includeTime": true },
+        { "type": "date", "name": "updatedAt", "label": "更新日時", "includeTime": true },
         { "type": "boolean", "name": "draft", "label": "下書き", "default": false },
         { "type": "richtext", "name": "content", "label": "本文", "required": true }
       ],
@@ -45,6 +47,8 @@
       "pit": {
         "title": "title",
         "body": "content",
+        "createdAt": "createdAt",
+        "updatedAt": "updatedAt",
         "draft": "draft"
       }
     },
@@ -60,6 +64,8 @@
         { "type": "text", "name": "demoURL", "label": "デモURL" },
         { "type": "text", "name": "repoURL", "label": "リポジトリURL" },
         { "type": "text", "name": "ogImage", "label": "OG画像URL", "note": "外部URL可" },
+        { "type": "date", "name": "createdAt", "label": "作成日時", "includeTime": true },
+        { "type": "date", "name": "updatedAt", "label": "更新日時", "includeTime": true },
         { "type": "boolean", "name": "draft", "label": "下書き", "default": false },
         { "type": "richtext", "name": "content", "label": "本文", "required": true }
       ],
@@ -74,6 +80,8 @@
       "pit": {
         "title": "title",
         "body": "content",
+        "createdAt": "createdAt",
+        "updatedAt": "updatedAt",
         "draft": "draft"
       }
     }
