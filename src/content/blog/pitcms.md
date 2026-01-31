@@ -4,7 +4,7 @@ description: 国産CMS
 date: 2026-01-31
 tags:
   - 日常
-ogImage: https://assets.blog.amatatu.com/clipboard.avif
+updatedAt: 2026-01-31T06:02:30.322Z
 draft: false
 ---
 # すごい
